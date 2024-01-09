@@ -6,7 +6,7 @@ export default function TodoContainer() {
     const { data } = useContext(TodoContext)
 
     return (
-        <div className='flex flex-col w-fit bg-slate-200'>
+        <div className='flex flex-col items-center'>
             {data.map(item => (
                 <TodoItem key={item.id} item={item} />
             ))}
