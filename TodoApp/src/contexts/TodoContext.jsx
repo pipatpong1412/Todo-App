@@ -33,8 +33,13 @@ function TodoContextProvider(props) {
         .then(res => setTrigger(prv =>!prv))
         }
 
+    const hdlFinished = (id, updatedTodo, finished) => {
+        axios.put(`${apiURL}/${id}`, { ...updatedTodo, completed: finished })
+            .then(res => setTrigger(prv => !prv))
+    }
+
     return (
-        <TodoContext.Provider value={{ data, setData, isLoading, hdlPost, hdlPut, hdlDelete }}>
+        <TodoContext.Provider value={{ data, setData, isLoading, hdlPost, hdlPut, hdlDelete, hdlFinished }}>
             {props.children}
         </TodoContext.Provider>
     );
