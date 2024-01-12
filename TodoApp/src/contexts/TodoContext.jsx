@@ -7,7 +7,7 @@ function TodoContextProvider(props) {
     const [data, setData] = useState()
     const [isLoading, setIsLoading] = useState(true)
     const [trigger, setTrigger] = useState(false)
-    const apiURL = 'http://localhost:8000/todos'
+    const apiURL = 'https://joyous-mite-top-coat.cyclic.app/todos'
 
     useEffect(() => {
         setIsLoading(true)
